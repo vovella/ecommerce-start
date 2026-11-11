@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv
+
+# Data files (managed by DVC)
+data/*.csv
+data/*.json
+data/*.pkl
+models/*.pkl
+
+# Environment
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# DVC
+/models/recommendation_model.pkl

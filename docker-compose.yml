@@ -1,0 +1,14 @@
+services:
+  chat-agent:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile  # якщо Dockerfile є в docker/; або просто Dockerfile в корені
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app                # монтуємо весь проєкт
+      - ./data:/app/data      # явно монтуємо data/, щоб контейнер бачив твої CSV
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: streamlit run src/app.py --server.port=8501 --server.address=0.0.0.0
+    restart: unless-stopped
